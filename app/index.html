@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>C4 Home</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main id="surface">
+ <header><div class="identity"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 9h18v14H7zM12 27h8M16 23v4"/></svg><span>C4 Home</span></div><div class="time"><time id="clock"></time><span id="date"></span></div></header>
+ <section class="intro"><h1 id="heading">Make yourself at home.</h1></section>
+ <div id="launcher" role="grid" aria-label="TV launcher">
+  <div class="section-head"><h2 id="section-title">Favorites</h2></div>
+  <div id="apps" class="tiles" role="row"></div>
+  <div class="section-head input-heading"><h2>Inputs</h2><span>Pick up where you left off</span></div>
+  <div id="inputs" class="inputs" role="row"></div>
+  <div class="tools" role="row"><div role="gridcell"><button id="view" tabindex="-1">All apps</button></div><div role="gridcell"><button id="edit" tabindex="-1">Edit favorites</button></div><div role="gridcell"><button id="refresh" tabindex="-1">Refresh apps</button></div><div role="gridcell"><button id="stock" tabindex="-1">LG Home</button></div></div>
+ </div>
+ <footer><span id="hint">Arrows to explore <b>·</b> OK to open <b>·</b> Back to exit</span></footer>
+</main>
+<div id="notice" role="status" aria-live="polite"></div><div id="idle" aria-hidden="true"></div>
+<script src="catalog.js"></script><script src="app.js"></script>
+</body></html>

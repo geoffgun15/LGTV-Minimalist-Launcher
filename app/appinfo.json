@@ -1,0 +1,15 @@
+{
+  "id": "com.lgtv.minimalistlauncher",
+  "version": "1.0.3",
+  "vendor": "Personal",
+  "type": "web",
+  "main": "index.html",
+  "title": "C4 Home",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "resolution": "1920x1080",
+  "bgColor": "#080a0c",
+  "iconColor": "#161b20",
+  "disableBackHistoryAPI": true,
+  "handlesRelaunch": false
+}
