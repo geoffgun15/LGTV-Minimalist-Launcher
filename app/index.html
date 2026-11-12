@@ -8,9 +8,10 @@
  <div id="launcher" role="grid" aria-label="TV launcher">
   <div class="section-head"><h2 id="section-title">Favorites</h2></div>
   <div id="apps" class="tiles" role="row"></div>
+  <div id="move-controls" class="tools move-controls" role="row" aria-label="Move favorite" hidden><div role="gridcell"><button id="move-left" tabindex="-1">Move left</button></div><div role="gridcell"><button id="move-right" tabindex="-1">Move right</button></div><div role="gridcell"><button id="place" tabindex="-1">Place</button></div><div role="gridcell"><button id="cancel-move" tabindex="-1">Cancel move</button></div></div>
   <div class="section-head input-heading"><h2>Inputs</h2><span>Pick up where you left off</span></div>
   <div id="inputs" class="inputs" role="row"></div>
-  <div class="tools" role="row"><div role="gridcell"><button id="view" tabindex="-1">All apps</button></div><div role="gridcell"><button id="edit" tabindex="-1">Edit favorites</button></div><div role="gridcell"><button id="refresh" tabindex="-1">Refresh apps</button></div><div role="gridcell"><button id="stock" tabindex="-1">LG Home</button></div></div>
+  <div class="tools" role="row"><div role="gridcell"><button id="view" tabindex="-1">All apps</button></div><div role="gridcell"><button id="edit" tabindex="-1">Edit favorites</button></div><div id="reorder-cell" role="gridcell" hidden><button id="reorder" tabindex="-1">Reorder favorites</button></div><div role="gridcell"><button id="refresh" tabindex="-1">Refresh apps</button></div><div role="gridcell"><button id="settings" tabindex="-1">Settings</button></div><div role="gridcell"><button id="stock" tabindex="-1">LG Home</button></div></div>
  </div>
  <footer><span id="hint">Arrows to explore <b>·</b> OK to open <b>·</b> Back to exit</span></footer>
 </main>

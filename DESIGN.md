@@ -166,3 +166,9 @@ Every focused button receives a sage outline (3px) separated from its edge by th
 Use the largest installed artwork, preferring vector assets where available. Center artwork in a fixed tile without entering layout flow. A shared square tile uses a 192-pixel source budget divided by device pixel ratio, capped at 136 CSS pixels; lower-resolution originals scale to the same square. Existing keyed app and HDMI elements persist through refreshes and favorite edits, preserving focus and decoded images.
 
 The launcher omits persistent catalog status, app-count captions, and the introductory subtitle. Loading availability is exposed through the refresh button’s aria-busy state; failures still use the transient status notice.
+
+### Reordering and native settings
+
+Reorder favorites is an explicit mode. OK picks up a favorite; Left/Right changes its visible position; OK places and persists it; Back restores the pre-move order before exiting the mode on a second press. A dashed focus outline identifies the moving tile. Contextual move/place/cancel buttons support the pointer. Status announcements describe the resulting position once per move. Reuse original cells in DOM order, using moveBefore when supported and restoring focus with the insertBefore fallback. Keyboard input retains focus until the pointer physically moves. Settings opens the TV’s own overlay via the public application launch API.
+
+Reorder favorites is nested inside Edit favorites: the reorder action is hidden on the normal launcher and shown only in favorite editing. Finishing or leaving reorder returns to the edit screen.

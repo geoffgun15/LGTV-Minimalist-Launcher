@@ -1,11 +1,11 @@
 {
   "name": "lgtv-minimalist-launcher",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "Minimal standalone launcher for LG webOS TV",
   "scripts": {
     "package": "ares-package app -o dist",
-    "test": "node tests/launcher.cjs && node tests/render-stability.cjs"
+    "test": "node tests/launcher.cjs && node tests/render-stability.cjs && node tests/reorder-settings.cjs"
   },
   "devDependencies": {
     "@webos-tools/cli": "3.2.6",
