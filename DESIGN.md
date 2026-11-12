@@ -167,8 +167,10 @@ Use the largest installed artwork, preferring vector assets where available. Cen
 
 The launcher omits persistent catalog status, app-count captions, and the introductory subtitle. Loading availability is exposed through the refresh button’s aria-busy state; failures still use the transient status notice.
 
-### Reordering and native settings
+### Inline favorite editing
 
-Reorder favorites is an explicit mode. OK picks up a favorite; Left/Right changes its visible position; OK places and persists it; Back restores the pre-move order before exiting the mode on a second press. A dashed focus outline identifies the moving tile. Contextual move/place/cancel buttons support the pointer. Status announcements describe the resulting position once per move. Reuse original cells in DOM order, using moveBefore when supported and restoring focus with the insertBefore fallback. Keyboard input retains focus until the pointer physically moves. Settings opens the TV’s own overlay via the public application launch API.
+Edit favorites retains the home list, tile identity, ordering, positions, and input layout. It replaces the normal toolbar with Add apps, Remove selected, and Done. OK picks up a favorite directly; Left/Right moves it; OK places and saves; Back cancels a move or finishes editing. A selected app name uses the sage accent so the removal target remains clear while the toolbar has focus.
 
-Reorder favorites is nested inside Edit favorites: the reorder action is hidden on the normal launcher and shown only in favorite editing. Finishing or leaving reorder returns to the edit screen.
+Only Add apps opens the catalog picker. Inputs and unrelated controls are hidden there. Check badges indicate existing or newly added favorites; adding never removes an existing favorite. Back to favorites restores the edit layout and focuses the last addition, or the previously selected favorite. Disabled Remove selected is excluded from directional navigation when no favorites remain.
+
+Reordering uses existing DOM nodes with moveBefore when available and the focus-restoring insertBefore fallback on older webOS. Keyboard focus keeps priority until the pointer physically moves. Native TV Settings remains a normal-toolbar shortcut.

@@ -21,10 +21,12 @@ const { pathToFileURL } = require('node:url');
     await page.locator('#view').click();
     assert(await page.locator('.tile').count() === 17, 'All saved app shortcuts');
     await page.locator('#edit').click();
+    assert(await page.locator('.tile').count() === 6, 'Editing stays on favorites');
+    await page.locator('#add-apps').click();
     await page.locator('[data-id="com.crunchyroll.webapp"]').click();
     assert(await page.locator('[data-id="com.crunchyroll.webapp"]').getAttribute('aria-pressed') === 'true', 'Favorite selected');
-    await page.keyboard.press('Escape');
-    await page.locator('#view').click();
+    await page.locator('#picker-done').click();
+    await page.locator('#done-editing').click();
     await page.reload();
     assert(await page.locator('.tile').count() === 7, 'Favorites persist after reload');
     for (const width of [1920, 960, 390]) {

@@ -1,4 +1,4 @@
-# LGTV Minimalist Launcher — C4 Home 1.0.4
+# LGTV Minimalist Launcher — C4 Home 1.0.5
 
 Dark, minimal standalone launcher tested on an LG C4 OLED running webOS TV 10.3.1. It leaves the existing Home button and startup behavior unchanged.
 
@@ -6,7 +6,7 @@ Dark, minimal standalone launcher tested on an LG C4 OLED running webOS TV 10.3.
 
 ## Install
 
-Download `dist/com.lgtv.minimalistlauncher_1.0.4_all.ipk`. In webOS Dev Manager, connect to your TV, choose Install, and select the package. This personal build was tested with a rooted TV and Homebrew Channel; installation on other configurations has not been verified.
+Download `dist/com.lgtv.minimalistlauncher_1.0.5_all.ipk`. In webOS Dev Manager, connect to your TV, choose Install, and select the package. This personal build was tested with a rooted TV and Homebrew Channel; installation on other configurations has not been verified.
 
 ## Develop and build
 
@@ -21,7 +21,7 @@ Open **C4 Home** in the LG app launcher. Move with the arrow keys and press OK t
 - **All apps** shows the 17 shortcuts captured from your TV's visible app list.
 - **Edit favorites** lets you add or remove favorites. Press Back or choose Done editing to finish. Favorites save on the TV, in the order you add them.
 - **Refresh apps** checks whether the saved app shortcuts are still installed. Newly installed apps require a catalog update from this computer. HDMI names are the saved names from setup.
-- **Reorder favorites** appears only inside **Edit favorites**: choose an app and press OK to pick it up; use Left/Right to move it, then OK to place and save. Back cancels the current move; Back again returns to Edit favorites. Pointer users can choose Move left, Move right, Place, or Cancel move.
+- While editing, **Add apps** opens the app picker; add one or more apps, then choose Back to favorites or press Back. **Remove selected** removes the highlighted favorite; **Done** returns directly home. There is no separate reorder screen.
 - **Settings** opens the native TV Settings overlay.
 - **LG Home** opens the normal LG interface.
 - **Back** leaves editing or All apps first, then closes the launcher.
@@ -30,7 +30,7 @@ After one minute without input, the screen dims; after two minutes it fades full
 
 ## Files
 
-- `dist/com.lgtv.minimalistlauncher_1.0.4_all.ipk`: reinstallable webOS package.
+- `dist/com.lgtv.minimalistlauncher_1.0.5_all.ipk`: reinstallable webOS package.
 - `app/`: complete static HTML/CSS/JavaScript source. Open `app/index.html` on a computer for a preview; opening TV apps works only on the TV.
 - `docs/screenshot.png`: actual rendering captured from the TV's app engine.
 
@@ -60,3 +60,7 @@ Removes the persistent catalog status, app-count caption, and introductory subti
 ## Version 1.0.4
 
 Adds persistent favorite reordering with both D-pad and on-screen move controls, including cancellation and accessible position announcements. Adds the native TV Settings overlay shortcut. Keyboard navigation keeps priority until the pointer actually moves, preventing focus jumps during layout changes.
+
+## Version 1.0.5
+
+Favorites are edited directly in their home positions. OK picks up/places apps without entering another mode. Add apps is the only route to the app picker; returning restores the favorites layout and focus. Remove selected and Done are contextual editing actions. Existing favorites and their saved order are retained.

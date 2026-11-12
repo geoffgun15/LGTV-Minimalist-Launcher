@@ -6,3 +6,4 @@
 @media(max-width:600px){#surface{padding:25px}.identity{font-size:18px}#clock{font-size:28px}#date{font-size:14px}h1{font-size:35px}.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}.inputs{grid-template-columns:1fr}.section-head{align-items:flex-start;gap:12px}.section-head span{max-width:45%;text-align:right}.app-name{font-size:17px}.tools{gap:14px}.tools button{font-size:17px}footer{font-size:14px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .tile.moving{outline:3px dashed var(--accent);outline-offset:6px}.move-controls{margin:22px 0 0}.tools button:active{color:var(--accent)}
+.cell.selected .app-name{color:var(--accent)}.tools button:disabled{opacity:.45;cursor:default}
