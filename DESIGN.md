@@ -174,3 +174,7 @@ Edit favorites retains the home list, tile identity, ordering, positions, and in
 Only Add apps opens the catalog picker. Inputs and unrelated controls are hidden there. Check badges indicate existing or newly added favorites; adding never removes an existing favorite. Back to favorites restores the edit layout and focuses the last addition, or the previously selected favorite. Disabled Remove selected is excluded from directional navigation when no favorites remain.
 
 Reordering uses existing DOM nodes with moveBefore when available and the focus-restoring insertBefore fallback on older webOS. Keyboard focus keeps priority until the pointer physically moves. Native TV Settings remains a normal-toolbar shortcut.
+
+### Native Sound settings
+
+Sound settings is a normal-toolbar shortcut that launches the TV’s existing Settings app with the sound target. The launcher does not mirror controls, retain separate sound profiles, or claim unsupported output-device EQ capabilities. All audio controls and values belong to the TV’s native menu.

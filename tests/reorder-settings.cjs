@@ -8,8 +8,8 @@ const { pathToFileURL } = require('node:url');
   const assert = (condition, message) => { if (!condition) throw new Error(message); };
   const errors = [];page.on('pageerror', error => errors.push(error.message));
   await page.addInitScript(() => {
-   window.launches = [];
-   window.PalmServiceBridge = function () {this.cancel = function () {};this.call = function (uri, json) {if(uri.endsWith('/launch'))window.launches.push(JSON.parse(json).id);setTimeout(() => this.onservicecallback(JSON.stringify({returnValue:true,exist:true})),20);};};
+   window.launches = [];window.launchRequests = [];
+   window.PalmServiceBridge = function () {this.cancel = function () {};this.call = function (uri, json) {if(uri.endsWith('/launch')){window.launches.push(JSON.parse(json).id);window.launchRequests.push(JSON.parse(json));}setTimeout(() => this.onservicecallback(JSON.stringify({returnValue:true,exist:true})),20);};};
   });
   const order = () => page.locator('#apps .tile').evaluateAll(tiles => tiles.map(tile => tile.dataset.id));
   const saved = () => page.evaluate(() => JSON.parse(localStorage.getItem('favorites')));
@@ -48,6 +48,7 @@ const { pathToFileURL } = require('node:url');
   assert(await page.locator('#normal-tools').isVisible(),'Back exits editing without intermediate screen');
   await page.locator('#settings').click();assert(await page.evaluate(()=>launches.includes('com.palm.app.settings')),'Native settings launch');
   assert(await page.evaluate(()=>launches.length)===1,'Editing never launches apps');
+  await page.locator('#sound-settings').click();assert(await page.evaluate(()=>launchRequests.some(request=>request.id==='com.palm.app.settings'&&request.params.target==='sound')),'Sound shortcut opens the native sound target');
   await page.evaluate(()=>localStorage.setItem('favorites','[]'));await page.reload();await ready();await page.locator('#edit').click();
   assert(await page.locator('#remove-selected').isDisabled(),'Empty favorites disable remove');
   assert(await page.evaluate(()=>document.activeElement.id)==='add-apps','Empty editing focuses Add apps');
